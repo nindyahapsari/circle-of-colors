@@ -1,13 +1,16 @@
 import {Circle} from "./circle.js";
 
 
+
 class App {
     constructor(){
     this.canvas = document.createElement('canvas');
     document.body.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
+    
 
-
+    this.mouse = { x: undefined, y: undefined}  
+    
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
@@ -22,6 +25,8 @@ class App {
       }
       console.log("circleArr: ", this.circleArr);
 
+
+      window.addEventListener('mousemove', this.mouseMovement.bind(this), false);
 }
 
  resize(){
@@ -37,14 +42,22 @@ class App {
 }
 
 
+mouseMovement(e){
+  this.mouse.x = e.x;
+  this.mouse.y = e.y;
+  //console.log(this.mouse);
+
+}
+
+
   animate(){
     window.requestAnimationFrame(this.animate.bind(this));
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    console.log('this is animation!');
+    //console.log('this is animation!');
 
 
     for(let c=0; c < this.circleArr.length; c++){
-        this.circleArr[c].update();
+        this.circleArr[c].update(this.mouse);
     }
 
 
