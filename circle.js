@@ -37,6 +37,7 @@ constructor(x, y, radius, ctx){
     if(mouse.x - this.x < 20 && mouse.x - this.x > -20 && mouse.y - this.y < 20 && mouse.y - this.y > -20 ){
        this.radius += 1;
     }    
+    //youtube video stops at 8:46
     
      this.draw(); 
   }
