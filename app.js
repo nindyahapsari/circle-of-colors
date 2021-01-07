@@ -15,14 +15,21 @@ class App {
     this.circleArr = [];
 
     for(let i=0; i < 100; i++){
-      this.x = Math.random() * window.innerWidth; 
-      this.y = Math.random() * window.innerHeight;
       this.radius = 30;
+      this.x = Math.random() * (window.innerWidth - this.radius * 2) + this.radius; 
+      this.y = Math.random() * (window.innerHeight - this.radius * 2) + this.radius;
         this.circleArr.push(new Circle(this.x, this.y, this.radius, this.ctx));
       }
       console.log("circleArr: ", this.circleArr);
-
+  
+    window.addEventListener("mousemove", this.movement.bind(this), false);
 }
+
+
+  movement(event) {
+  
+  console.log("mousemove event: ", event);
+  }
 
  resize(){
   

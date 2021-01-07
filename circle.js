@@ -4,8 +4,8 @@ constructor(x, y, radius, ctx){
   
   this.x = x;
   this.y = y;
-  this.dx = (Math.random() - 0.5) * 8; //velocity
-  this.dy = (Math.random() - 0.5) * 8; //velocity
+  this.dx = (Math.random() - 0.5) * 1; //velocity
+  this.dy = (Math.random() - 0.5) * 1; //velocity
   this.ctx = ctx;
 ;
   this.radius = radius;
