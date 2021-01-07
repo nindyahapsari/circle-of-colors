@@ -23,22 +23,13 @@ class App {
       this.y = Math.random() * (window.innerHeight - this.radius * 2) + this.radius;
         this.circleArr.push(new Circle(this.x, this.y, this.radius, this.ctx));
       }
-      console.log("circleArr: ", this.circleArr);
-<<<<<<< HEAD
+//console.log("circleArr: ", this.circleArr);
   
-    window.addEventListener("mousemove", this.movement.bind(this), false);
-=======
 
 
       window.addEventListener('mousemove', this.mouseMovement.bind(this), false);
->>>>>>> 0d0e4c53ee0805bff5b8c84e35ad7312fa19199c
 }
 
-
-  movement(event) {
-  
-  console.log("mousemove event: ", event);
-  }
 
  resize(){
   
