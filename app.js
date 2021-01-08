@@ -11,19 +11,18 @@ class App {
 
     this.mouse = { x: undefined, y: undefined}  
     
-
+    // update everytime the browser resize not when it refresh and resize
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
 
-    this.circleArr = [];
 
-    for(let i=0; i < 100; i++){
-      this.radius = 30;
-      this.x = Math.random() * (window.innerWidth - this.radius * 2) + this.radius; 
-      this.y = Math.random() * (window.innerHeight - this.radius * 2) + this.radius;
-        this.circleArr.push(new Circle(this.x, this.y, this.radius, this.ctx));
-      }
-//console.log("circleArr: ", this.circleArr);
+// for(let i=0; i < 100; i++){
+//         this.radius = 30;
+//         this.x = Math.random() * (window.innerWidth - this.radius * 2) + this.radius; 
+//         this.y = Math.random() * (window.innerHeight - this.radius * 2) + this.radius;
+//           this.circleArr.push(new Circle(this.x, this.y, this.radius, this.ctx));
+            //console.log("circleArr: ", this.circleArr);
+//         }
   
 
 
@@ -35,7 +34,17 @@ class App {
   
   this.canvas.width = window.innerWidth;
   this.canvas.height = window.innerHeight;
+
+    this.circleArr = [];
+     for(let i=0; i < 100; i++){
+          this.radius = 30;
+          this.x = Math.random() * (window.innerWidth - this.radius * 2) + this.radius; 
+          this.y = Math.random() * (window.innerHeight - this.radius * 2) + this.radius;
+            this.circleArr.push(new Circle(this.x, this.y, this.radius, this.ctx));
+            //console.log("circleArr: ", this.circleArr);
+          }
   
+
 
     window.requestAnimationFrame(this.animate.bind(this));
   
